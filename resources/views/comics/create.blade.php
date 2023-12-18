@@ -21,7 +21,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="price" class="form-label">Prezzo</label>
-                    <input type="text" class="form-control" name="price" id="price" placeholder="Prezzo">
+                    <input type="number" class="form-control" name="price" id="price" placeholder="Prezzo">
                 </div>
                 <div class="mb-3">
                     <label for="series" class="form-label">Serie comic</label>
