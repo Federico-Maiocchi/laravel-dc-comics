@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<button><a href="{{route('home')}}">Torna alla home</a></button> 
+<button><a href="{{route('home')}}">Torna alla home</a></button>
+<button><a href="{{route('comics.create')}}">Aggiungi comic</a></button> 
     <section>
         <div class="container">
             <div class="row">
