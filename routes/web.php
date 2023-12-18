@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\PageController;
 
 Route::get('/', [PageController::class, 'index'])->name('home');
+
+use App\Http\Controllers\ComicController;
+
+Route::get('/comics',[ComicController::class,'index'])->name('comics.index');
