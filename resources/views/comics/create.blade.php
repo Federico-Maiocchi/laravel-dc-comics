@@ -5,7 +5,8 @@
     <button><a href="{{route('comics.index')}}">Sezione comics</a></button> 
     <section>
         <div class="container">
-            <form action="">
+            <form action="{{ route('comics.store') }}" method="POST">
+                @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">Title comic</label>
                     <input type="text" class="form-control" name="title" id="title" placeholder="Title">
