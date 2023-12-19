@@ -8,7 +8,12 @@
             <div class="d-flex">
                 <div class="col-6">
                     <button><a href="{{route('comics.edit', $comic->id)}}">Modifica comic</a></button>
-                    <button><a href="">Elimina</a></button>
+                    <form action="{{ route('comics.destroy', $comic->id)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+
+                        <button type="submit" class="btn btn-primary">Elimina</button>
+                    </form>
                     <h1>{{ $comic->title }}</h1>
                     <img src="{{$comic->thumb}}" class="card-img-top w-100" alt="...">
                 </div>
