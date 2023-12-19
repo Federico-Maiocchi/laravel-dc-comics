@@ -233,11 +233,11 @@ class ComicSeeder extends Seeder
             $new_comic->title = $comic['title'];
             $new_comic->description = $comic['description'];
             $new_comic->thumb = $comic['thumb'];
+            // funzione per rimuovere parti di stringhe
             $new_comic->price = Str::remove('$',$comic['price']);
             $new_comic->series = $comic['series'];
             $new_comic->sale_date = $comic['sale_date'];
             $new_comic->type = $comic['type'];
-
             $new_comic->save();
         }
     }
