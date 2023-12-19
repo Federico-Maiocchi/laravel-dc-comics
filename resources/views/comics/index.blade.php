@@ -12,7 +12,7 @@
                             <img src="{{$comic->thumb}}" class="card-img-top h-100 w-100" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    <a href="{{route('comic.show',$comic)}}">
+                                    <a href="{{route('comics.show',$comic)}}">
                                         {{$comic->title}}
                                     </a>    
                                 </h5>
@@ -20,6 +20,7 @@
                                 <p class="card-text">{{$comic->price}}</p>
                                 <p class="card-text">{{$comic->series}}</p>
                                 <p class="card-text">{{$comic->sale_date}}</p>
+                                <button><a href="{{route('comics.edit', $comic->id)}}">Modifica comic</a></button>
                             </div>
                         </div>
                     </div>

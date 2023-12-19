@@ -48,4 +48,19 @@ class ComicController extends Controller
         return redirect()->route('comics.show',$new_comic->id);
         
     }
+
+    public function edit(Comic $comic) {
+        return view('comics.edit', compact('comic'));
+    }
+
+    public function update(Request $request,Comic $comic) {
+
+        // dd('update');
+
+        $data = $request->all();
+
+        $comic->update($data);
+
+        return redirect()->route('comics.show', $comic->id);
+    }
 }
