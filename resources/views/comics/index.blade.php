@@ -22,13 +22,31 @@
                                 <p class="card-text">{{$comic->sale_date}}</p>
                                 <button><a href="{{route('comics.edit', $comic->id)}}">Modifica comic</a></button>
 
-                                <form action="{{ route('comics.destroy', $comic->id)}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-
-                                    <button type="submit">Cancella</button>
-                                </form>
-                                
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{ $comic->id }}">
+                                    Elimina
+                                </button>
+                                <div class="modal fade" id="staticBackdrop{{ $comic->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Attenzione</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Sei sicuro di voler ELIMINARE questa scheda?
+                                            </div>
+                                            <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <form action="{{ route('comics.destroy', $comic->id)}}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                
+                                                    <button type="submit" class="btn btn-primary">Procedi</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
                             </div>
                         </div>
                     </div>
